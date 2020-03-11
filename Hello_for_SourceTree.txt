@@ -2,6 +2,7 @@ public class Hello {
 
 	public static void main (String[] args){
 		System.out.println("Hello World");
-		System.out.println("I need somthing to commit")
+		System.out.println("I need somthing to commit");
+		System.out.println("I committed this file with SourceTree");
 	}
 }
