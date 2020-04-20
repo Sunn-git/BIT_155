@@ -1,0 +1,45 @@
+
+/* TYPOGRAPHY
+---------------------------------------------------------------------------------------------------- */
+/* Styles
+--------------------------------------------------------- */
+.title-wrap {
+    position: relative;
+    z-index: 100;
+    //mix-blend-mode: difference;
+}
+
+.title {
+    font-family: quiche-sans, sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 11vw;
+    line-height: 0.9;
+    color: var(--color-title);
+    pointer-events: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+/* Split
+--------------------------------------------------------- */
+
+.split {
+    display: inline-block;
+    overflow: hidden;
+
+    &:nth-child(1) {
+        transform: translate3d(1ch, -50%, 0);
+    }
+
+    &:nth-child(2) {
+        transform: translate3d(-1ch, 50%, 0);
+    }
+}
+
+.split__text {
+    display: block;
+}

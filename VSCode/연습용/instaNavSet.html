@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>small project</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="css/instaNavSet.css">
+        
+    </head>
+    <body> 
+        <div class="wrap">
+        <!-- 상단 -->
+            <header class="w3-container">
+                <!-- 내비게이션 -->
+                <nav class="center bar"> 
+                    <!-- 중앙 로고 -->
+                    <div class="w3-display-container w3-mobile bar">
+                        <div id="logo" class="w3-display-middle">
+                            <a href="insta.html">
+                                <h1>Social Media</h1>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- 우측 아이콘 3개 -->
+                    <div id="icons" class="w3-display-container w3-mobile bar">
+                        <div class="w3-display-bottommiddle">
+                            <!-- 연결하고자 하는 기능 페이지 & 아이콘 -->
+                            <a href="insta.html">
+                                user
+                            </a>
+                            <a href="insta_quiz.html">
+                                clipboard
+                            </a>
+                            <a href="insta_ml.html">
+                                webcam
+                           </a>
+                           
+                        </div>
+                    </div>
+                </nav>                
+            </header>
+            <!-- 메인 내용 -->
+            <section class="w3-row">
+                <div class="center">
+                <!-- 좌측 영역 -->
+                    <div class="umg w3-col s7 m7 l8 w3-mobile">
+                        <!-- 게시글 (하단 영역 복사해서 입력) -->
+                        <div class="post w3-border w3-white">
+                            <!-- 프로필 영역 -->
+                            <div class="w3-margin">
+                                <!-- 유저 프로필 사진-->
+                                <img class="user-face w3-left w3-circle" src="img/profile.jpg" alt="profile">
+                                <!-- 유저 아이디 -->
+                                <div class="h32 w3-display-container">
+                                    <div class="l40 w3-display-left user-id">kimminji</div>
+                                    <!-- 시간 -->
+                                <div class="post-time l40 w3-display-right">2020.02.05</div>
+                                </div>
+                            </div>
+                            <!-- 이미지 영역 -->
+                            <div class="post-img"> 
+                                <img style="width: 100%; max-height: initial" src="img/cat.jpg" alt="img">
+                            </div>
+                            <!-- 글 영역 -->
+                            <div class="w3-margin">
+
+                                    <!-- 본문 영역 -->
+                                <span class="user-id">kimminji</span> 2020년엔 서로 더 많이 사랑하자💕
+                                <a class="hashtag" href="https://www.instagram.com/explore/tags/%EB%A9%94%EB%A6%AC%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4%F0%9F%8E%84/">#메리크리스마스🎄</a>
+                                <a class="hashtag" href="https://www.instagram.com/explore/tags/%ED%95%B4%ED%94%BC%EB%89%B4%EC%9D%B4%EC%96%B4%F0%9F%8E%89/">#해피뉴이어🎉</a>
+                                <br><br>
+                                <!-- 버튼 영역 -->
+                                <input type="button" id="like1" class="btn like-empty">
+                                <input type="button" class="btn cmt"><br>
+                                <!-- 좋아요 갯수 -->
+                                <p class="post-like">좋아요 341개</p>
+                                
+                                
+                            </div>
+                        </div>
+                        <!-- 여기까지 -->
+
+                        <!-- 게시글 (하단 영역 복사해서 입력) -->
+                        <div class="post w3-border w3-white">
+                            <!-- 프로필 영역 -->
+                            <div class="w3-margin">
+                                <!-- 유저 프로필 사진-->
+                                <img class="h32 w3-left w3-circle" src="img/profile.jpg" alt="profile">
+                                <!-- 유저 아이디 -->
+                                <div class="h32 w3-display-container">
+                                    <div class="l40 user-id w3-display-left">kimminji</div>
+                                </div>
+                            </div>
+                            <!-- 이미지 영역 -->
+                            <div class="post-img"> 
+                                <img style="width: 100%; max-height: initial" src="img/dog.jpg" alt="img">
+                            </div>
+                            <!-- 글 영역 -->
+                            <div class="w3-margin">
+                                <!-- 버튼 영역 (같이 추가) -->
+                                <input type="button" id="like2" class="btn like-empty">
+                                <input type="button" class="btn cmt"><br>
+                                <!-- 좋아요 갯수 (같이 추가) -->
+                                <p class="post-like">좋아요 1,157개</p>
+                                <!-- 본문 영역 -->
+                                <span class="user-id">kimminji</span>
+                                <span>
+                                    아심쿵 ♥️♥️ㅎㅎㅎㅎ 내이쁜 친그 아기 호두🐶
+                                    ㅋㅋㅋㅋ 너뮤기여웍 왜케 잘크냐그 🐈 완전 사랑행😍😍
+                                </span>
+                                <a class="hashtag" href="https://www.instagram.com/explore/tags/%EC%B9%9C%EA%B5%AC%EA%B0%9C/">#친구개</a>
+                                <!-- 시간 (같이 추가) -->
+                                <p class="post-time">3일 전</span></p>
+                                <!-- 댓글과 모달 (같이 추가) -->
+                             </div>
+                        </div>
+                        <!-- 여기까지 -->
+                </div>
+
+                <!-- 우측 friend list (위젯 영역) -->
+                <div class="umg w3-rest s3 w3-mobile">
+                    <div class="w3-white w3-border" style="width: 90%; float: right;">
+                        <div class="w3-container"><h5><b>친구 목록</b></h5></div>
+                        <div class="w3-container w3-margin w3-border">
+                            <ul class="w3-ul">
+                                <li>
+                                    <!-- 친구 웹 주소 -->
+                                    <a href="https://unsplash.com/photos/kqxzWipnFcQ">
+                                        <!-- 친구 사진 -->
+                                        <img src="img/friend01.jpg" alt="profile" class="friend-face w3-left w3-circle">
+                                        <!-- 친구 아이디 -->
+                                        <div class="h56 w3-display-container w3-mobile">
+                                            <div class="l64 w3-display-left user-id">navi (cat)</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <!-- 친구 웹 주소 -->
+                                    <a href="https://unsplash.com/photos/7GX5aICb5i4">
+                                        <!-- 친구 사진 -->
+                                        <img src="img/friend02.jpg" alt="profile" class="friend-face w3-left w3-circle">
+                                        <!-- 친구 아이디 -->
+                                        <div class="h56 w3-display-container w3-mobile">
+                                            <div class="l64 w3-display-left user-id">olive (cat)</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <!-- 친구 웹 주소 -->
+                                    <a href="https://unsplash.com/photos/rW-I87aPY5Y">
+                                        <!-- 친구 사진 -->
+                                        <img src="img/friend03.jpg" alt="profile" class="friend-face w3-left w3-circle">
+                                        <!-- 친구 아이디 -->
+                                        <div class="h56 w3-display-container w3-mobile">
+                                            <div class="l64 w3-display-left user-id">danchoo (cat)</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <!-- 친구 웹 주소 -->
+                                    <a href="https://unsplash.com/photos/K4mSJ7kc0As">
+                                        <!-- 친구 사진 -->
+                                        <img src="img/friend04.jpg" alt="profile" class="friend-face w3-left w3-circle">
+                                        <!-- 친구 아이디 -->
+                                        <div class="h56 w3-display-container w3-mobile">
+                                            <div class="l64 w3-display-left user-id">choco (dog)</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <!-- 친구 웹 주소 -->
+                                    <a href="https://unsplash.com/photos/qO-PIF84Vxg">
+                                        <!-- 친구 사진 -->
+                                        <img src="img/friend05.jpg" alt="profile" class="friend-face w3-left w3-circle">
+                                        <!-- 친구 아이디 -->
+                                        <div class="h56 w3-display-container w3-mobile">
+                                            <div class="l64 w3-display-left user-id">bori (dog)</div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- copyright 및 이메일 기입 영역 -->
+            <footer class="bar">
+                <div class="footer">
+                    <b>&copy;copyright INS</b><br>
+                    encore@encore.com
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>

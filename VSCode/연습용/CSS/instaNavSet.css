@@ -1,0 +1,218 @@
+/* 내가 추가 or 수정 한 거 */
+header {
+    height: 160px;
+}
+
+#icons {
+    font-family: fantasy;
+    color: rgba(65, 62, 66, 0.808);
+    font-size: 20px;
+}
+
+#logo h1 {
+    font-family: fantasy;
+    color: rgba(65, 62, 66, 0.925);
+    font-size: 42px;
+    padding-top: 40px;
+}
+
+
+/* 인스타그램 폰트 */
+@font-face {
+    font-family: 'Richard Murray';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../font/RichardMurray.woff') format('woff');
+}
+
+#icons a {
+    text-decoration: none;
+    line-height: 60px;
+    margin: 15px;
+}
+
+
+/* 레이아웃 */
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+}
+
+.wrap {
+    min-height: 100%;
+    position: relative;
+    padding-bottom: 77px;
+}
+
+/* padding-bottom <= footer height */
+
+/* footer 고정을 위한 태그 */
+footer {
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+section {
+    background-color: #F8F2EE;
+}
+
+.footer {
+    font-size: 0.7rem;
+    text-align: center;
+    color:#DEDBD1;
+    display: table;
+    margin: 19.25px auto;
+}
+
+.center {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.bar {
+    height: 77px
+}
+
+.umg {
+    margin-top: 12px;
+}
+
+.fit {
+    display: table;
+    margin: 12px auto;
+    min-width: 50%;
+    max-width: 60%;
+}
+
+/* 내비게이션 아이콘 관련 */
+#logo a {
+    text-decoration: none;
+}
+
+
+
+
+
+/* 버튼 관련 */
+.btn {
+    border: none;
+    width: 24px;
+    height: 24px;
+    margin: 4px;
+    cursor: pointer;
+}
+
+.like-empty {
+    background: url("../img/like_empty.png") no-repeat;
+    background-size: 24px;
+}
+
+.like-full {
+    background: url("../img/like_full.png") no-repeat;
+    background-size: 24px;
+}
+
+.cmt {
+    background: url("../img/chat.png") no-repeat;
+    background-size: 24px;
+}
+
+/* 프로필 이미지 및 아이디 */
+.user-id {
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.user-face {
+    width: 32px;
+}
+
+.friend-face {
+    width: 56px;
+    height: 56px;
+    border: 2px solid tomato;
+    padding: 2px;
+}
+
+/* 글(post) 내부 */
+.post {
+    margin-bottom: 40px;
+}
+
+.hashtag {
+    text-decoration: none;
+    color: blue;
+}
+
+.post-time {
+    font-size: 0.7rem;
+    color: grey;
+    text-align: right;
+    vertical-align: auto;
+
+}
+
+.post-like {
+    font-weight: bold;
+    font-size: 1.0rem;
+}
+
+.post-img {
+    margin-top: 10px;
+}
+
+form {
+    text-align: left;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    font-size: 1.2rem;
+    line-height: 3rem;
+}
+
+/* 반응형 */
+@media (min-width: 769px) {
+    .center {
+        width: 65%;
+    }
+}
+
+@media (max-width: 768px) {
+    .center {
+        width: 90%;
+    }
+
+}
+
+/* 인스타 색상(그리디언트) 적용 */
+.insta-bg {
+    color: white;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+/* 기타 */
+.h32 {
+    height: 32px;
+}
+
+.h56 {
+    height: 56px;
+}
+
+.l40 {
+    margin-left: 40px;
+}
+
+.l64 {
+    margin-left: 64px;
+}

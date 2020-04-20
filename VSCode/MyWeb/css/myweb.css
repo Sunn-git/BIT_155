@@ -1,0 +1,147 @@
+
+/* footer 고정을 위한 태그 */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+.wrapper {
+    min-height: 97.4%;
+}
+
+.section {
+    overflow: auto;
+    padding-bottom: 60px;
+}
+
+footer {
+    background-color: rgb(233, 232, 232);
+}
+
+.footer {
+    position: relative;
+    height: 60px;
+    margin-top: -60px;
+    padding-top: 25px;
+    font-size: 0.7rem;
+    text-align: center;
+    color: white;
+}
+
+
+/* clear */
+.clear {
+    clear: both;
+}
+
+
+/* header */
+header {
+    background-color: rgb(233, 232, 232);
+}
+
+#title {
+    text-align: center;
+    color: black;
+    padding: 20px;
+}
+
+#upperMenu {
+    margin: 0 auto;
+    display: table;
+}
+
+#upperMenu ul li {
+    float: left;
+    padding: 15px 30px;
+    list-style: none;
+    text-align: center;
+}
+
+
+#upperMenu ul li a:any-link, #title h1 :any-link {
+    text-decoration: none;
+    color: black;
+}
+#upperMenu ul li:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+
+/* section */
+
+section div.section {
+    margin: 0 auto;
+    width: 70%;
+    /* border: lightgray 1px solid; */
+    
+}
+
+section div.title {
+    text-align: center;
+    margin: 30px 0;
+    background-color: blanchedalmond;
+}
+
+section div.content {
+    text-align: center;
+    /* border: 1px solid lightgray; */
+    padding-bottom: 40px;
+}
+
+
+/* signUp form */
+section div.signUp {
+    padding: 10px 0;
+}
+
+section div.signUp form table {
+    width: 70%;
+    /* border: solid 1px lightgray; */
+    padding: 20px 13%;
+    margin: 0 auto;
+}
+
+section div.signUp form table td.inputName {
+    text-align: end;
+    padding: 7px;
+    min-width: 105px;
+}
+
+section div.signUp form table td input.signup_input {
+    min-width: 175;
+    padding: 2px;
+}
+
+section div.signUp form table tr td span.radio {
+    margin: 0 10px;
+    color: gray;
+}
+
+section div.signUp form span input.signup_input_submit {
+    margin: 5px 10px;
+    min-width: 175;
+    padding: 5px 10px;
+    border: 1px rgb(231, 231, 231) solid;
+    
+}
+
+#bday{
+    min-width: 169px;
+    min-height: 15px;
+    text-align: justify;
+    color: gray;
+}
+
+
+/* width: 169px;
+height: 15px; */
+
+
+
+

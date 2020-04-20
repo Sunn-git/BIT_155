@@ -1,0 +1,151 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 16px;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    --color-text: #38201e;
+    --color-bg: #fff2e1;
+    --color-deco: rgba(212, 169, 126, 0.12);
+    --color-title: #292213;
+    --color-link: #c37646;
+    --color-link-hover: #000;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    font-family: niveau-grotesk, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Page Loader */
+.js .loading::before,
+.js .loading::after {
+    content: '';
+    position: fixed;
+    z-index: 1000;
+}
+
+.js .loading::before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-bg);
+}
+
+.js .loading::after {
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    margin: -30px 0 0 -30px;
+    border-radius: 50%;
+    opacity: 0.4;
+    background: var(--color-link);
+    animation: loaderAnim 0.7s linear infinite alternate forwards;
+
+}
+
+@keyframes loaderAnim {
+    to {
+        opacity: 1;
+        transform: scale3d(0.5,0.5,1);
+    }
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-link);
+    outline: none;
+
+    transition: color .2s;
+}
+
+a:hover,
+a:focus {
+    color: var(--color-link-hover);
+    outline: none;
+}
+
+.frame {
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 1200;
+    line-height: 1.5;
+}
+
+.frame__title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.frame__links a:not(:last-child) {
+    margin-right: .8rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: calc(100vh - 18rem);
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.frame__tagline {
+    display: block;
+    position: relative;
+    margin: 0;
+}
+
+@media screen and (min-width: 53em) {
+    .message {
+        display: none;
+    }
+    .frame {
+        position: fixed;
+        text-align: left;
+        z-index: 100;
+        top: 0;
+        left: 0;
+        line-height: 1;
+        display: grid;
+        align-content: space-between;
+        justify-content: space-between;
+        width: 100%;
+        max-width: none;
+        padding: 2rem 3rem;
+        pointer-events: none;
+        grid-template-areas: 'title links';
+    }
+    .frame__title-wrap {
+        grid-area: title;
+        line-height: 1.5;
+    }
+    .frame__title {
+        margin: 0;
+    }
+    .frame__links {
+        grid-area: links;
+        padding: 0;
+    }
+    .frame a {
+        pointer-events: auto;
+    }
+    .content {
+        height: 100vh;
+    }
+}

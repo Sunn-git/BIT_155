@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>나만의 SNS 만들기</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="css/insta.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="wrap">
+        <!-- 상단 -->
+            <header class="w3-container w3-border-bottom">
+                <!-- 내비게이션 -->
+                <nav class="center bar"> 
+                    <!-- 중앙 로고 -->
+                    <div class="w3-display-container w3-cell w3-mobile bar">
+                        <div id="logo" class="w3-display-right">
+                            <a href="insta.html">
+                                <h1>Social Media</h1>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- 우측 아이콘 3개 -->
+                    <div id="icons" class="w3-display-container w3-cell w3-mobile bar">
+                        <div class="w3-display-right">
+                            <!-- 연결하고자 하는 기능 페이지 & 아이콘 -->
+                            <a href="insta.html">
+                                <img src="img/user.png">
+                            </a>
+                            <a href="insta_quiz.html">
+                                <img src="img/clipboard.png">
+                            </a>
+                            <a href="insta_ml.html">
+                                <img src="img/webcam.png">
+                            </a>
+                        </div>
+                    </div>
+                </nav>                
+            </header>
+        <!-- 메인 내용 -->
+            <section class="w3-row">
+                <div class="center">
+                <!-- 콘텐츠 영역 -->
+                    <div class="umg w3-rest w3-mobile">
+                        <!-- 게시글 (하단 영역 복사해서 입력) -->
+                        <div class="post w3-border w3-white" style="text-align: center;">
+                            <!-- 프로필 영역 -->
+                            <div class="w3-margin">
+                                <!-- 유저 프로필 사진-->
+                                <img class="user-face w3-left w3-circle" src="img/profile.jpg" alt="profile">
+                                <!-- 유저 아이디 -->
+                                <div class="h32 w3-display-container">
+                                    <div class="l40 w3-display-left user-id">kimminji</div>
+                                </div>
+                            </div>
+                            <!-- 머신러닝 영역 -->
+                            <!-- 제목 -->
+                            <div class="w3-container insta-bg">
+                                <h3><b>나만의 머신러닝</b> &nbsp;<i class="fa fa-hand-peace-o"></i></h3>
+                            </div>
+                            <!-- 내용 -->
+                            <div class="fit w3-container w3-padding">
+                                <div class="w3-container w3-card umg w3-border w3-padding w3-light-grey">
+                                    <p>
+                                        이 프로그램은 <a href="https://teachablemachine.withgoogle.com/">Teachable Machine</a>으로<br> 1000원과 5000원의 사진을 학습시킨 결과물입니다.
+                                    </p>
+                                    <p>
+                                        학습된 데이터를 통해 <b>딥러닝 모델</b>이 만들어지며,<br> 이 모델은 카메라 이미지를 바탕으로 1000원과 5000원 중<br> 무엇과 더 유사한지 확률을 계산합니다.
+                                    </p>
+                                    <p>
+                                        각 항목 옆에 표시되는 <b>% 수치</b>는<br> 머신이 판별한 <b>상대적 유사도</b>로,<br> 한 쪽이 <b>95% 이상 유사도</b>를 보였을 때<br> 해당 항목에 대한 자세한 설명이 나옵니다.
+                                    </p>
+                                </div> 
+                                <div class="w3-container w3-card umg w3-border w3-padding w3-light-grey">
+                                    <h2 style="text-align: center;"><b>Question <i class="fa fa-question-circle"></i></b></h2>
+                                    <p>
+                                        1000원으론 핫바를 먹을 수 있고 5000원으론 덮밥을 먹을 수 있지.<br>
+                                        우리는 그 차이를 알지만 과연 컴퓨터도 그 차이를 알까?<br>
+                                        그래서 내가 컴퓨터에게 가르쳐줬어! 1000원과 5000원을 보여줘봐!
+                                    </p>
+                                </div> 
+                                <div class="w3-container w3-card umg w3-border w3-padding w3-light-grey">
+                                    <h2><b>Machine Learning <img src="img/machine-learning.png"></b></h2>
+                                    <!-- 머신러닝 예제 비디오 -->
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/T2qQGqZxkD0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- copyright 및 이메일 기입 영역 -->
+            <footer class="bar">
+                <div class="footer">
+                    <b>&copy;copyright kimminji</b><br>
+                    encore@encore.com
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
+
