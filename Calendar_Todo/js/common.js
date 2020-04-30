@@ -12,10 +12,22 @@ var mainTodayDay = document.getElementById('mainTodayDay');
 var mainTodayDate = document.getElementById('mainTodayDate');
 clickedDate1 = document.getElementById(today.getDate());
 
+//localstorage 저장용 객체 만들기
+var to_do = function(to_do_id, content) {
+    this.to_do_id = to_do_id;
+    this.content = content;
+}
+
+var to_do_list = [];
+
+var todo = new to_do('id', 'todotxt');
+console.log(todo);
+
 //에러때문에 변수 옮김
 var tdGroup = [];
 
 var todoList = [];
+var keyValue = today.getFullYear() + '' + today.getMonth() + '' + today.getDate();
 todoList[keyValue] = [];
 
 
@@ -25,7 +37,6 @@ var inputList = document.getElementById('input-list');
 var delText = 'X';
 inputDate.addEventListener('click', addTodoList);
 var dataCnt = 1;
-var keyValue = today.getFullYear() + '' + today.getMonth() + '' + today.getDate();
 
 var clickedDate1 = document.getElementById(today.getDate());
 
@@ -230,7 +241,8 @@ function reshowingList() {
         var $div = document.createElement('div');
         for(var i = 0; i < todoList[keyValue].length; i++){
             var $div = document.createElement('div');
-            $div.textContent = '-' + todoList[keyValue][i];
+            $div.textContent = '- ' + todoList[keyValue][i];
+            $div.setAttribute('id', 'todotxt'+dataCnt+keyValue);
             var $btn = document.createElement('button');
             $btn.setAttribute('type', 'button');
             $btn.setAttribute('id', 'del-ata');
@@ -240,12 +252,20 @@ function reshowingList() {
             inputList.appendChild($div);
             inputList.appendChild($btn);
             $div.addEventListener('click', checkList);
-            $div.addEventListener('click', deleteTodo);
+            $btn.addEventListener('click', deleteTodo);
             inputBox.value = '';
             
             function deleteTodo() {
-                $div.remove();
-                $btn.remove();
+
+                let len = todoList[keyValue].length;
+                for(let j = 0; j < len; j++){
+                    if(('- '+todoList[keyValue][j]) == $div.textContent){
+                        todoList[keyValue].splice(j,1);
+                        $div.remove();
+                        $btn.remove();
+                        break;
+                    }
+                } 
             }
         }
     }
@@ -253,9 +273,12 @@ function reshowingList() {
 
 
 
+
 function addTodoList() {
     var $div = document.createElement('div');
-    $div.textContent = '-' + inputBox.value;
+    $div.textContent = '- ' + inputBox.value;
+    $div.setAttribute('id', 'todotxt'+dataCnt+keyValue);
+    to_do_list.push(new to_do('todotxt'+dataCnt+keyValue, inputBox.value))
     var $btn = document.createElement('button');
     $btn.setAttribute('type', 'button');
     $btn.setAttribute('id', 'del-data');
@@ -266,16 +289,33 @@ function addTodoList() {
     inputList.appendChild($btn);
     todoList[keyValue].push(inputBox.value);
     dataCnt++;
+    console.log("after dataCnt++ : " + dataCnt);
     inputBox.value = '';
     $div.addEventListener('click', checkList);
     $btn.addEventListener('click', deleteTodo);
+
     function deleteTodo() {
-        $div.remove();
-        $btn.remove();
+
+        let len = todoList[keyValue].length;
+        for(var i = 0; i < len; i++){
+            if(('- '+todoList[keyValue][i]) == $div.textContent){
+                to_do_list.splice(i,1);
+                todoList[keyValue].splice(i,1);
+                $div.remove();
+                $btn.remove();
+                console.log("after remove : ");
+                console.log(to_do_list);
+                localStorage.setItem(today.getDate(), JSON.stringify(to_do_list));
+                break;
+            }
+        } 
     }
+    
+    localStorage.setItem(today.getDate(), JSON.stringify(to_do_list));
+    console.log(to_do_list);
+
 }
 
-console.log(keyValue);
 
 function checkList(e) {
     e.currentTarget.classList.add('checked');
