@@ -227,9 +227,6 @@ function reshowingList() {
         let index = to_do_list[k].keyValue;
         todoList[index][k] = to_do_list[k].content;
     }
-    console.log(to_do_list);
-    console.log(todoList);
-    //얘는 정상으로 나오는데 출력될 때 제대로 안나옴... 왜죠
 
 
     if(todoList[keyValue] === undefined){
@@ -323,7 +320,6 @@ function addTodoList() {
     todoList[keyValue].push(inputBox.value);
     dataCnt++;
     inputBox.value = '';
-    // $div.addEventListener('click', checkList);
     $btn.addEventListener('click', deleteTodo);
 
     function deleteTodo() {
@@ -336,6 +332,10 @@ function addTodoList() {
                 $div.remove();
                 $btn.remove();
                 localStorage.setItem(today.getDate(), JSON.stringify(to_do_list));
+                console.log(to_do_list);
+                if(to_do_list.length == 0){
+                    localStorage.removeItem(today.getDate());
+                }
                 break;
             }
         } 
@@ -343,12 +343,4 @@ function addTodoList() {
     localStorage.setItem(today.getDate(), JSON.stringify(to_do_list));
 
 }
-
-
-// function checkList(e) {
-//     e.currentTarget.classList.add('checked');
-//     let todoClass = e.currentTarget.classList[0];
-//     console.log(document.getElementById('todotxt'+todoClass));
-//     to_do_list.
-// }
 
