@@ -13,14 +13,15 @@ var mainTodayDate = document.getElementById('mainTodayDate');
 clickedDate1 = document.getElementById(today.getDate());
 
 //localstorage 저장용 객체 만들기
-var to_do = function(to_do_id, content) {
+var to_do = function(to_do_id, keyValue, content) {
     this.to_do_id = to_do_id;
+    this.keyValue = keyValue;
     this.content = content;
 }
 
 var to_do_list = [];
 
-var todo = new to_do('id', 'todotxt');
+var todo = new to_do('to_do_id', 'keyValue' , 'content');
 console.log(todo);
 
 //에러때문에 변수 옮김
@@ -181,8 +182,7 @@ nextBtn.addEventListener('click', next);
 
 
 function clickStart() {
-
-
+    
     for(let i = 1; i <= pageYear[first.getMonth()]; i++){
         tdGroup[i] = document.getElementById(i);
         tdGroup[i].addEventListener('click', changeToday);
@@ -207,7 +207,31 @@ function changeToday(e) {
 //Todo-List 입력, 체크, 삭제하기
 
 function reshowingList() {
+    to_do_list = [];
+    todoList = [];
+    todoList[keyValue] = [];
+
     keyValue = today.getFullYear() + '' + today.getMonth() + '' + today.getDate();
+
+
+    //로컬스토리지에서 가져오기 & 배열로 변환
+    let to_do_json = localStorage.getItem(today.getDate()); 
+
+    if(to_do_json != null){
+        to_do_list = JSON.parse(to_do_json);
+        console.log(to_do_list);
+    }
+
+    //가져온 배열 todoList에 넣기
+    for(let k = 0; k < to_do_list.length; k++){
+        let index = to_do_list[k].keyValue;
+        todoList[index][k] = to_do_list[k].content;
+    }
+
+    console.log(todoList);
+    //얘는 정상으로 나오는데 출력될 때 제대로 안나옴... 왜죠
+
+
     if(todoList[keyValue] === undefined){
         inputList.textContent = '';
         todoList[keyValue] = [];
@@ -231,13 +255,15 @@ function reshowingList() {
         });
     }else{
         const $divs = document.querySelectorAll('#input-list > div');
-        $divs.forEach(function (e) {
-            e.remove();
-        });
+        // $divs.forEach(function (e) {
+        //     e.remove();
+        // });
         const $btns = document.querySelectorAll('#input-list > button');
-        $btns.forEach(function (e1) {
-            e1.remove();
-        });
+        // $btns.forEach(function (e1) {
+        //     e1.remove();
+        // });
+
+
         var $div = document.createElement('div');
         for(var i = 0; i < todoList[keyValue].length; i++){
             var $div = document.createElement('div');
@@ -278,7 +304,7 @@ function addTodoList() {
     var $div = document.createElement('div');
     $div.textContent = '- ' + inputBox.value;
     $div.setAttribute('id', 'todotxt'+dataCnt+keyValue);
-    to_do_list.push(new to_do('todotxt'+dataCnt+keyValue, inputBox.value))
+    to_do_list.push(new to_do(('todotxt'+dataCnt+keyValue), keyValue, inputBox.value))
     var $btn = document.createElement('button');
     $btn.setAttribute('type', 'button');
     $btn.setAttribute('id', 'del-data');
@@ -305,12 +331,15 @@ function addTodoList() {
                 $btn.remove();
                 console.log("after remove : ");
                 console.log(to_do_list);
+                console.log("ls 저장 전 key확인");
+                console.log(today.getDate());
                 localStorage.setItem(today.getDate(), JSON.stringify(to_do_list));
                 break;
             }
         } 
     }
-    
+    console.log("ls 저장 전 key확인");
+    console.log(today.getDate());
     localStorage.setItem(today.getDate(), JSON.stringify(to_do_list));
     console.log(to_do_list);
 
