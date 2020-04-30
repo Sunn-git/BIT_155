@@ -265,62 +265,37 @@ function reshowingList() {
 
 
         var $div = document.createElement('div');
-        // for(var i = 0; i < todoList[keyValue].length; i++){
             for(var i = 0; i < to_do_list.length; i++){
             var $div = document.createElement('div');
-            // $div.textContent = '- ' + todoList[keyValue][i];
             $div.textContent = '- '+ to_do_list[i].content;          
             $div.setAttribute('id', 'todotxt'+to_do_list[i].to_do_id);
             $div.setAttribute('class', to_do_list[i].to_do_id);
             
             var $btn = document.createElement('button');
             $btn.setAttribute('type', 'button');
-            // $btn.setAttribute('id', 'del-ata');
             $btn.setAttribute('id', to_do_list[i].to_do_id);
-            // $btn.setAttribute('class', 'del-data');
             $btn.setAttribute('class', 'del-data '+to_do_list[i].to_do_id);
-            // $btn.setAttribute('class', to_do_list[i].to_do_id);
             $btn.textContent = delText;
             inputList.appendChild($div);
             inputList.appendChild($btn);
-
+            
             let to_do_id = to_do_list[i].to_do_id;
-
-            $div.addEventListener('click', checkList);
+            let index = i;
+            // $div.addEventListener('click', checkList);
             $btn.addEventListener('click', deleteTodo);
             inputBox.value = '';
-            
-            // function deleteTodo() {
-            //     let len = todoList[keyValue].length;
-            //     for(let j = 0; j < len; j++){
-            //         if(('- '+todoList[keyValue][j]) == $div.textContent){
-            //             todoList[keyValue].splice(j,1);
-            //             $div.remove();
-            //             $btn.remove();
-            //             break;
-            //         }
-            //     } 
-            // }
 
             function deleteTodo() {
-                // let len = to_do_list.length;
                 var delTodoArr = document.getElementsByClassName(to_do_id);
                 let len = delTodoArr.length;
                 for(let d = 0; d < len; d++){
                     delTodoArr[len-d-1].remove();
                 }
-                // for(var i = 0; i < len; i++){
-                //     if(('- '+to_do_list[i].content) == $div.textContent){
-                //         to_do_list.splice(i,1);
-                //         todoList[keyValue].splice(i,1);
-                //         $div.remove();
-                //         $btn.remove();
-                //         console.log("after remove : ");
-                //         console.log(to_do_list);
-                //         localStorage.setItem(today.getDate(), JSON.stringify(to_do_list));
-                //         break;
-                //     }
-                // } 
+
+                to_do_list.splice(index, 1);
+                todoList.splice(index, 1);
+
+                localStorage.setItem(today.getDate(), JSON.stringify(to_do_list));
 
                 
             }
@@ -347,9 +322,8 @@ function addTodoList() {
     inputList.appendChild($btn);
     todoList[keyValue].push(inputBox.value);
     dataCnt++;
-    console.log("after dataCnt++ : " + dataCnt);
     inputBox.value = '';
-    $div.addEventListener('click', checkList);
+    // $div.addEventListener('click', checkList);
     $btn.addEventListener('click', deleteTodo);
 
     function deleteTodo() {
@@ -361,24 +335,20 @@ function addTodoList() {
                 todoList[keyValue].splice(i,1);
                 $div.remove();
                 $btn.remove();
-                console.log("after remove : ");
-                console.log(to_do_list);
-                console.log("ls 저장 전 key확인");
-                console.log(today.getDate());
                 localStorage.setItem(today.getDate(), JSON.stringify(to_do_list));
                 break;
             }
         } 
     }
-    console.log("ls 저장 전 key확인");
-    console.log(today.getDate());
     localStorage.setItem(today.getDate(), JSON.stringify(to_do_list));
-    console.log(to_do_list);
 
 }
 
 
-function checkList(e) {
-    e.currentTarget.classList.add('checked');
-}
+// function checkList(e) {
+//     e.currentTarget.classList.add('checked');
+//     let todoClass = e.currentTarget.classList[0];
+//     console.log(document.getElementById('todotxt'+todoClass));
+//     to_do_list.
+// }
 
