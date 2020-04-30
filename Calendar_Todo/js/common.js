@@ -227,7 +227,7 @@ function reshowingList() {
         let index = to_do_list[k].keyValue;
         todoList[index][k] = to_do_list[k].content;
     }
-
+    console.log(to_do_list);
     console.log(todoList);
     //얘는 정상으로 나오는데 출력될 때 제대로 안나옴... 왜죠
 
@@ -255,44 +255,76 @@ function reshowingList() {
         });
     }else{
         const $divs = document.querySelectorAll('#input-list > div');
-        // $divs.forEach(function (e) {
-        //     e.remove();
-        // });
+        $divs.forEach(function (e) {
+            e.remove();
+        });
         const $btns = document.querySelectorAll('#input-list > button');
-        // $btns.forEach(function (e1) {
-        //     e1.remove();
-        // });
+        $btns.forEach(function (e1) {
+            e1.remove();
+        });
 
 
         var $div = document.createElement('div');
-        for(var i = 0; i < todoList[keyValue].length; i++){
+        // for(var i = 0; i < todoList[keyValue].length; i++){
+            for(var i = 0; i < to_do_list.length; i++){
             var $div = document.createElement('div');
-            $div.textContent = '- ' + todoList[keyValue][i];
-            $div.setAttribute('id', 'todotxt'+dataCnt+keyValue);
+            // $div.textContent = '- ' + todoList[keyValue][i];
+            $div.textContent = '- '+ to_do_list[i].content;          
+            $div.setAttribute('id', 'todotxt'+to_do_list[i].to_do_id);
+            $div.setAttribute('class', to_do_list[i].to_do_id);
+            
             var $btn = document.createElement('button');
             $btn.setAttribute('type', 'button');
-            $btn.setAttribute('id', 'del-ata');
-            $btn.setAttribute('id', dataCnt+keyValue);
-            $btn.setAttribute('class', 'del-data');
+            // $btn.setAttribute('id', 'del-ata');
+            $btn.setAttribute('id', to_do_list[i].to_do_id);
+            // $btn.setAttribute('class', 'del-data');
+            $btn.setAttribute('class', 'del-data '+to_do_list[i].to_do_id);
+            // $btn.setAttribute('class', to_do_list[i].to_do_id);
             $btn.textContent = delText;
             inputList.appendChild($div);
             inputList.appendChild($btn);
+
+            let to_do_id = to_do_list[i].to_do_id;
+
             $div.addEventListener('click', checkList);
             $btn.addEventListener('click', deleteTodo);
             inputBox.value = '';
             
-            function deleteTodo() {
+            // function deleteTodo() {
+            //     let len = todoList[keyValue].length;
+            //     for(let j = 0; j < len; j++){
+            //         if(('- '+todoList[keyValue][j]) == $div.textContent){
+            //             todoList[keyValue].splice(j,1);
+            //             $div.remove();
+            //             $btn.remove();
+            //             break;
+            //         }
+            //     } 
+            // }
 
-                let len = todoList[keyValue].length;
-                for(let j = 0; j < len; j++){
-                    if(('- '+todoList[keyValue][j]) == $div.textContent){
-                        todoList[keyValue].splice(j,1);
-                        $div.remove();
-                        $btn.remove();
-                        break;
-                    }
-                } 
+            function deleteTodo() {
+                // let len = to_do_list.length;
+                var delTodoArr = document.getElementsByClassName(to_do_id);
+                let len = delTodoArr.length;
+                for(let d = 0; d < len; d++){
+                    delTodoArr[len-d-1].remove();
+                }
+                // for(var i = 0; i < len; i++){
+                //     if(('- '+to_do_list[i].content) == $div.textContent){
+                //         to_do_list.splice(i,1);
+                //         todoList[keyValue].splice(i,1);
+                //         $div.remove();
+                //         $btn.remove();
+                //         console.log("after remove : ");
+                //         console.log(to_do_list);
+                //         localStorage.setItem(today.getDate(), JSON.stringify(to_do_list));
+                //         break;
+                //     }
+                // } 
+
+                
             }
+
         }
     }
 }
@@ -304,7 +336,7 @@ function addTodoList() {
     var $div = document.createElement('div');
     $div.textContent = '- ' + inputBox.value;
     $div.setAttribute('id', 'todotxt'+dataCnt+keyValue);
-    to_do_list.push(new to_do(('todotxt'+dataCnt+keyValue), keyValue, inputBox.value))
+    to_do_list.push(new to_do((dataCnt+keyValue), keyValue, inputBox.value))
     var $btn = document.createElement('button');
     $btn.setAttribute('type', 'button');
     $btn.setAttribute('id', 'del-data');
