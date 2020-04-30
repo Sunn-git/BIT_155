@@ -1,0 +1,21 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#sel1, #sel2{ 
+    float: left;
+    margin: 30px 8%;
+}
+
+.wrapper{
+    margin: 20px auto;
+    max-width: 80%;
+    text-align: center;
+    border: solid;
+}
+
+h1 {
+    margin: 20px;
+    padding: 20px;
+}
